@@ -6,6 +6,247 @@
     <title>Document</title>
     <style>
         /* ================= Header ================= */
+/* ================= Header ================= */
+
+/* ================= Header ================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue)
+    );
+
+    color: #fff;
+    padding: 36px 24px 48px;
+    border-radius: 0 0 28px 28px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* افکت‌های تزئینی پس‌زمینه */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(255, 255, 255, 0.12),
+            transparent 24%
+        );
+
+    pointer-events: none;
+}
+
+/* چیدمان کلی محتویات هدر */
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+/* لوگوی دانشگاه آزاد + نوشته‌های هدر */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* قاب سفید لوگوی دانشگاه آزاد */
+.brand-badge {
+    width: 92px;
+    height: 92px;
+    flex: 0 0 92px;
+
+    padding: 8px;
+    border-radius: 20px;
+
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.16),
+        inset 0 0 0 1px rgba(18, 59, 122, 0.05);
+}
+
+/* خود تصویر لوگوی دانشگاه آزاد */
+.brand-badge img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+/* نوشته‌های هدر */
+.brand-title {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.brand-title h1 {
+    margin: 0;
+
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 800;
+    line-height: 1.8;
+
+    color: #ffffff;
+}
+
+/* عبارت کاردانی پیوسته */
+.hero-highlight {
+    display: inline-block;
+    color: bisque;
+    font-weight: 900;
+}
+
+/* توضیح زیر عنوان */
+.brand-title p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* قاب لوگوی دانشکده مهارت */
+.faculty-logo {
+    width: 150px;
+    height: 105px;
+    flex: 0 0 150px;
+
+    padding: 10px;
+    border-radius: 18px;
+
+    /*
+      برای اینکه لوگوی دانشکده روی هدر آبی
+      خوانا و واضح نمایش داده شود
+    */
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* تصویر لوگوی دانشکده مهارت */
+.faculty-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 28px 18px 36px;
+        border-radius: 0 0 22px 22px;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .brand {
+        align-items: center;
+        gap: 14px;
+    }
+
+    .brand-badge {
+        width: 78px;
+        height: 78px;
+        flex-basis: 78px;
+        padding: 7px;
+        border-radius: 17px;
+    }
+
+    .faculty-logo {
+        width: 145px;
+        height: 95px;
+        flex-basis: auto;
+
+        /* قرار گرفتن لوگوی دانشکده در وسط هدر */
+        align-self: center;
+    }
+
+    .brand-title h1 {
+        font-size: clamp(1.15rem, 4.5vw, 1.55rem);
+        line-height: 1.9;
+    }
+
+    .brand-title p {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 24px 14px 32px;
+    }
+
+    .brand {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .brand-badge {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+        padding: 6px;
+        border-radius: 15px;
+    }
+
+    .faculty-logo {
+        width: 135px;
+        height: 88px;
+    }
+
+    .brand-title h1 {
+        font-size: 1.08rem;
+        line-height: 1.9;
+    }
+
+    .brand-title p {
+        font-size: 0.84rem;
+        line-height: 1.7;
+    }
+}
+
 
 
     </style>
