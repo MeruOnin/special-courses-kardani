@@ -41,46 +41,82 @@ body {
     overflow: hidden;
 }
 
+/* افکت‌های تزئینی پس‌زمینه */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
+
     background:
-    radial-gradient(circle at top right, rgba(255,255,255,0.16), transparent 28%),
-    radial-gradient(circle at bottom left, rgba(255,255,255,0.12), transparent 24%);
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(255, 255, 255, 0.12),
+            transparent 24%
+        );
+
     pointer-events: none;
 }
 
+/* چیدمان کلی محتویات هدر */
 .hero-content {
     position: relative;
     z-index: 1;
-    display: grid;
-    gap: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
 }
 
+/* لوگوی دانشگاه آزاد + نوشته‌های هدر */
 .brand {
     display: flex;
     align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
+    gap: 18px;
+    flex: 1;
+    min-width: 0;
 }
 
+/* قاب سفید لوگوی دانشگاه آزاد */
 .brand-badge {
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.14);
-    display: grid;
-    place-items: center;
-    font-size: 1.5rem;
-    font-weight: 800;
-    border: 1px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(6px);
+    width: 92px;
+    height: 92px;
+    flex: 0 0 92px;
+
+    padding: 8px;
+    border-radius: 20px;
+
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.16),
+        inset 0 0 0 1px rgba(18, 59, 122, 0.05);
+}
+
+/* خود تصویر لوگوی دانشگاه آزاد */
+.brand-badge img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
 }
 
 .brand-title {
     display: grid;
     gap: 4px;
+    min-width: 0;
 }
 
 .brand-title h1 {
@@ -89,10 +125,50 @@ body {
     font-weight: 800;
 }
 
+/* عبارت کاردانی پیوسته */
+.hero-highlight {
+    display: inline-block;
+    color: bisque;
+    font-weight: 900;
+}
+
 .brand-title p {
     margin: 0;
     opacity: 0.9;
     font-size: 0.95rem;
+}
+
+/* قاب لوگوی دانشکده مهارت */
+.faculty-logo {
+    width: 150px;
+    height: 105px;
+    flex: 0 0 150px;
+
+    padding: 10px;
+    border-radius: 18px;
+
+    /*
+      برای اینکه لوگوی دانشکده روی هدر آبی
+      خوانا و واضح نمایش داده شود
+    */
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+/* تصویر لوگوی دانشکده مهارت */
+.faculty-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
 }
 
 /* ================= Search (UX Improved) ================= */
